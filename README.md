@@ -1,20 +1,16 @@
 # DotNetAI API
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
-![.NET Core](https://img.shields.io/badge/.NET-512BD4?style=flat&logo=dotnet&logoColor=white)  
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)  
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)  
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)  
-![Visual Studio](https://img.shields.io/badge/Visual_Studio-5C2D91?style=flat&logo=visual-studio&logoColor=white)  
-![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=flat&logo=visual-studio-code&logoColor=white)  
-![Git](https://img.shields.io/badge/GIT-F05032?style=flat&logo=git&logoColor=white)  
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)  
-![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat&logo=postman&logoColor=white)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
+![.NET Core](https://img.shields.io/badge/.NET-512BD4?style=flat&logo=dotnet&logoColor=white)
+![Visual Studio](https://img.shields.io/badge/Visual_Studio-5C2D91?style=flat&logo=visual-studio&logoColor=white)
+![Git](https://img.shields.io/badge/GIT-F05032?style=flat&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)
+![Docker](https://img.shields.io/badge/docker-2496ED?style=flat&logo=docker&logoColor=white)
 
 
 ## 🎯 Desafio Target - API
 
-Este projeto foi desenvolvido como parte de uma avaliação prática para a vaga de Desenvolvedor Backend. O objetivo é demonstrar proficiência em tecnologias e boas práticas de desenvolvimento web com .NET 8, indo além dos requisitos propostos no teste e requisitos opcionais.
+Este projeto foi desenvolvido como parte de uma avaliação prática para a vaga de Desenvolvedor Backend. O objetivo é demonstrar proficiência em tecnologias e boas práticas de desenvolvimento web com .NET 8, indo além dos requisitos propostos no teste.
 
 A solução implementa uma API RESTful robusta para:
 - Gestão de comissões
@@ -24,10 +20,10 @@ A solução implementa uma API RESTful robusta para:
 ## 📋 Requisitos e Documentação
 
 Os requisitos completos do teste técnico (prova) estão detalhados no documento oficial:
-* **[Enunciado](https://github.com/marcelogmoura/GitHubMonitor.API/blob/main/Pdf/Backend%20Developer%20Coding%20Assessment.pdf)**
+* **[Enunciado](https://github.com/marcelogmoura/desafioTarget.API/blob/main/Pdf/desafio_dev.pdf)**
 
 
-## 🚀 Visão Geral
+## 🚀 Visão Geral do Projeto/Teste
 
 O projeto segue os princípios da **Clean Architecture** e **DDD (Domain-Driven Design)**, garantindo desacoplamento entre as camadas de domínio, aplicação, infraestrutura e apresentação. A aplicação está totalmente containerizada, pronta para execução em qualquer ambiente via Docker.
 
@@ -83,8 +79,6 @@ desafioTarget.API/
 ```
 
 
-
-
 ## ⚙️ Como Executar
 
 ### Pré-requisitos
@@ -101,6 +95,7 @@ desafioTarget.API/
 
 
 4. Quando os containers estiverem rodando, acesse:  
+
 - **Swagger UI (Documentação):** http://localhost:8080/swagger  
 - **API Base:** http://localhost:8080/api  
 
@@ -139,6 +134,11 @@ Containers Docker em Execução
 ## 🧪 Testes Automatizados
 
 Execute na raiz do projeto para rodar a suíte de testes unitários focados nas regras de negócio:
+
+
+Containers Docker em Execução
+
+![Teste](https://i.postimg.cc/ZqBJf2KH/teste.png)
 
 
 
