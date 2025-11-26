@@ -15,10 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\desafioTarget.Application\desafioTarget.Application.csproj" />
     <ProjectReference Include="..\desafioTarget.Infra\desafioTarget.Infra.csproj" />
   </ItemGroup>
