@@ -7,9 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Entities\" />
-    <Folder Include="Interfaces\Services\" />
-    <Folder Include="Interfaces\Repositories\" />
+    <Folder Include="Dtos\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\desafioTarget.Domain\desafioTarget.Domain.csproj" />
   </ItemGroup>
 
 </Project>

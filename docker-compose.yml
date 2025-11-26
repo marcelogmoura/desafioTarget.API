@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  database:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: desafio-sqlserver
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=SenhaForte!123 
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlvolume:/var/opt/mssql
+
+  api:
+    image: ${DOCKER_REGISTRY-}desafiotargetapi
+    container_name: desafio-api
+    build:
+      context: .
+      dockerfile: 1. APPLICATION/desafioTarget.API/Dockerfile
+    ports:
+      - "8080:8080" # Porta HTTP padrão do .NET 8 container
+      - "8081:8081" # Porta HTTPS
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=database,1433;Database=DesafioTargetDb;User Id=sa;Password=SenhaForte!123;TrustServerCertificate=True;
+    depends_on:
+      - database
+
+volumes:
+  sqlvolume:

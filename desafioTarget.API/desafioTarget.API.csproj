@@ -10,4 +10,13 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\desafioTarget.Application\desafioTarget.Application.csproj" />
+    <ProjectReference Include="..\desafioTarget.Infra\desafioTarget.Infra.csproj" />
+  </ItemGroup>
+
 </Project>
