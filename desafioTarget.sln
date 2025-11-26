@@ -12,6 +12,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3_INFRA", "3_INFRA", "{3DD66C94-6608-42B0-89D5-7F9FBD677316}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4_TESTS", "4_TESTS", "{4B821BF1-3FCE-49F3-90DB-01A44C42CA31}"
+	ProjectSection(SolutionItems) = preProject
+		CalculadoraComissaoServiceTests.cs = CalculadoraComissaoServiceTests.cs
+		CalculadoraJurosServiceTests.cs = CalculadoraJurosServiceTests.cs
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "desafioTarget.Domain", "desafioTarget.Domain\desafioTarget.Domain.csproj", "{B1828099-A4C1-49F2-BCA7-23D71D81EE8C}"
 EndProject

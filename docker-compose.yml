@@ -6,7 +6,7 @@ services:
     container_name: desafio-sqlserver
     environment:
       - ACCEPT_EULA=Y
-      - SA_PASSWORD=SenhaForte!123 
+      - SA_PASSWORD=${SA_PASSWORD}  # Lê do arquivo .env
     ports:
       - "1433:1433"
     volumes:
@@ -19,11 +19,12 @@ services:
       context: .
       dockerfile: desafioTarget.API/Dockerfile
     ports:
-      - "8080:8080" # Porta HTTP padrão do .NET 8 container
-      - "8081:8081" # Porta HTTPS
+      - "8080:8080"
+      - "8081:8081"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionStrings__DefaultConnection=Server=database,1433;Database=DesafioTargetDb;User Id=sa;Password=SenhaForte!123;TrustServerCertificate=True;
+      # Monta a string de conexão usando a variável do .env
+      - ConnectionStrings__DefaultConnection=Server=database,1433;Database=DesafioTargetDb;User Id=sa;Password=${SA_PASSWORD};TrustServerCertificate=True;
     depends_on:
       - database
 
