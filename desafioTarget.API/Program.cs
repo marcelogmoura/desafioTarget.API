@@ -1,17 +1,29 @@
-using desafioTarget.Infra.Contexts;  
-using Microsoft.EntityFrameworkCore;  
+using desafioTarget.Infra.Contexts;
+using Microsoft.EntityFrameworkCore;
+using desafioTarget.Domain.Interfaces.Repositories;
+using desafioTarget.Infra.Repositories;
+using desafioTarget.Domain.Services;
+using desafioTarget.Application.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
+ 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-
 builder.Services.AddDbContext<DesafioContext>(options =>
     options.UseSqlServer(connectionString));
 
+ 
+builder.Services.AddScoped<CalculadoraJurosService>();
+builder.Services.AddScoped<CalculadoraComissaoService>();
+
+builder.Services.AddScoped<IProdutoRepository, ProdutoRepository>();
+
+
+builder.Services.AddScoped<VendaAppService>();
+builder.Services.AddScoped<ProdutoAppService>();
+
 
 builder.Services.AddControllers();
-
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -25,9 +37,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();
