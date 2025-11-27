@@ -98,9 +98,19 @@ desafioTarget.API/
 ### Passo a Passo
 
 1. Clone o repositório e acesse a pasta raiz  
-2. Crie um arquivo `.env` na raiz (onde está `docker-compose.yml`) e defina a senha do banco:  
+
+2. Crie um arquivo `.env` na raiz (onde está `docker-compose.yml`) e defina a senha do banco: 
+
+
+```
+SA_PASSWORD=SenhaForte!123
+``` 
 
 3. Execute para compilar a API, criar o banco e iniciar os serviços:  
+
+```
+docker-compose up -d --build
+```
 
 
 4. Quando os containers estiverem rodando, acesse:  
@@ -144,9 +154,9 @@ Containers Docker em Execução
 
 Execute na raiz do projeto para rodar a suíte de testes unitários focados nas regras de negócio:
 
-
-
-
+```
+dotnet test
+```
 
 👨‍💻 **Autor:** Marcelo Moura 
 

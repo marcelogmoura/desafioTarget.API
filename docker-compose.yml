@@ -27,6 +27,17 @@ services:
       - ConnectionStrings__DefaultConnection=Server=database,1433;Database=DesafioTargetDb;User Id=sa;Password=${SA_PASSWORD};TrustServerCertificate=True;
     depends_on:
       - database
+      
+# --- NOVO SERVIÇO: FRONTEND ---
+  frontend:
+    container_name: desafio-web
+    build:
+      context: ./desafioTarget-UI  # Caminho da pasta do Angular
+      dockerfile: Dockerfile
+    ports:
+      - "80:80" # acesso via porta 80 (padrão da web)
+    depends_on:
+      - api # Só sobe depois da API      
 
 volumes:
   sqlvolume:

@@ -29,7 +29,9 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowAngular",
         policy =>
         {
-            policy.WithOrigins("http://localhost:4200") // Permite o acesso do Front
+            policy.WithOrigins(
+                        "http://localhost:4200", // Permite o acesso do Front
+                        "http://localhost")
                   .AllowAnyHeader()
                   .AllowAnyMethod();
         });
