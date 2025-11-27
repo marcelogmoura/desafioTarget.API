@@ -145,9 +145,6 @@ Containers Docker em Execução
 Execute na raiz do projeto para rodar a suíte de testes unitários focados nas regras de negócio:
 
 
-Containers Docker em Execução
-
-![Teste](https://i.postimg.cc/ZqBJf2KH/teste.png)
 
 
 
