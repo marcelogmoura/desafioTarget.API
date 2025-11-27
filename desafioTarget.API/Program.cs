@@ -9,10 +9,33 @@ var builder = WebApplication.CreateBuilder(args);
 
  
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<DesafioContext>(options =>
-    options.UseSqlServer(connectionString));
 
- 
+
+//builder.Services.AddDbContext<DesafioContext>(options =>
+//    options.UseSqlServer(connectionString));
+
+builder.Services.AddDbContext<DesafioContext>(options =>
+    options.UseSqlServer(connectionString, sqlServerOptions =>
+    {
+        sqlServerOptions.EnableRetryOnFailure(
+            maxRetryCount: 2,        // Tenta 2 vezes
+            maxRetryDelay: TimeSpan.FromSeconds(3), // Espera até 3s entre tentativas
+            errorNumbersToAdd: null);
+    }));
+
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngular",
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:4200") // Permite o acesso do Front
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
+});
+
+
 builder.Services.AddScoped<CalculadoraJurosService>();
 builder.Services.AddScoped<CalculadoraComissaoService>();
 
@@ -35,6 +58,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors("AllowAngular");
 
 app.UseHttpsRedirection();
 app.UseAuthorization();

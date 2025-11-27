@@ -17,6 +17,15 @@ A solução implementa uma API RESTful robusta para:
 - Controle de estoque
 - Cálculos financeiros
 
+
+## 🎯 Desafio Target - UI
+
+Não foi solicitado uma interface para esse projeto, mas para agregar optei por desenvolver uma solução com Angular, disponível no link abaixo:
+
+* **[FrontEnd Angular](https://github.com/marcelogmoura/desafioTarget.UI)**
+
+
+
 ## 📋 Requisitos e Documentação
 
 Os requisitos completos do teste técnico (prova) estão detalhados no documento oficial:
